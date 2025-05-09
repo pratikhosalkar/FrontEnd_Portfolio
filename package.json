@@ -11,7 +11,7 @@
   "dependencies": {
     "@tsparticles/react": "^3.0.0",
     "aos": "^2.3.4",
-    "framer-motion": "^7.6.10",
+    "framer-motion": "^7.10.3",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

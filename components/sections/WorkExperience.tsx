@@ -1,6 +1,14 @@
 import React from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion, HTMLMotionProps, MotionProps } from 'framer-motion';
+interface MotionDivProps extends MotionProps {
+  children: React.ReactNode;
+  className?: string;
+}
 
+const MotionDiv: React.FC<MotionDivProps> = ({ children, ...props }) => {
+  return <motion.div {...props}>{children}</motion.div>;
+};
+const MotionH2: React.FC<HTMLMotionProps<'h2'> & { children: React.ReactNode; className?: string }> = motion.h2;
 const workExperience = [
   {
     company: "NeoSoft",
@@ -21,8 +29,6 @@ const workExperience = [
   }
 ];
 
-const MotionH2: React.FC<HTMLMotionProps<'h2'>> = motion.h2;
-const MotionDiv: React.FC<HTMLMotionProps<'div'>> = motion.div;
 
 const WorkExperience: React.FC = () => {
   return (

@@ -1,6 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-
+import { motion, MotionProps } from "framer-motion";
+interface MotionDivProps extends MotionProps {
+  children: React.ReactNode;
+  className?: string;
+}
+const MotionDiv: React.FC<MotionDivProps> = ({ children, ...props }) => {
+  return <motion.div {...props}>{children}</motion.div>;
+};
 const educationData = [
   {
     degree: "Product Management Certification",
@@ -39,7 +45,7 @@ const Education: React.FC = () => {
       </div>
       <div className="relative mx-auto flex flex-col items-center" style={{ maxWidth: '600px' }}>
         {educationData.map((item, index) => (
-          <motion.div
+          <MotionDiv
             key={index}
             className="mb-12 ml-6 flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +62,7 @@ const Education: React.FC = () => {
             {index !== educationData.length - 1 && (
               <div className="w-px bg-yellowGreen h-12 mt-6"></div>
             )}
-          </motion.div>
+          </MotionDiv>
         ))}
       </div>
     </section>
