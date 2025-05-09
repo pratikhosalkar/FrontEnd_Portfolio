@@ -82,12 +82,13 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <MotionSection
+    <div
+    // <MotionSection
       className="relative w-full min-h-screen bg-black text-white overflow-hidden flex flex-col justify-center items-center px-6 md:px-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false }}
-      transition={{ duration: 1 }}
+      // initial={{ opacity: 0, y: 20 }}
+      // whileInView={{ opacity: 1, y: 0 }}
+      // viewport={{ once: false }}
+      // transition={{ duration: 1 }}
     >
       {/* <Particles
         id="tsparticles"
@@ -199,7 +200,8 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-    </MotionSection>
+    {/* </MotionSection> */}
+    </div>
   );
 };
 
