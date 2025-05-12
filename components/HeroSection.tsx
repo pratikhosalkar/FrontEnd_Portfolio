@@ -1,17 +1,11 @@
 import React, { useEffect } from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import {
   FaChevronDown,
   FaGithub,
   FaLinkedin,
   FaDownload,
 } from "react-icons/fa";
-
-const particlesInit = async (main: any) => {
-  await loadFull(main);
-};
 
 const particlesOptions = {
   background: {
@@ -87,38 +81,11 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <div
-      // <MotionSection
-      className="relative w-full min-h-screen bg-black text-white overflow-hidden flex flex-col justify-center items-center px-6 md:px-12"
-      // initial={{ opacity: 0, y: 20 }}
-      // whileInView={{ opacity: 1, y: 0 }}
-      // viewport={{ once: false }}
-      // transition={{ duration: 1 }}
-    >
-      {/* <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={particlesOptions}
-        className="absolute inset-0 -z-10"
-      /> */}
-
+    <div className="relative w-full min-h-screen bg-black text-white overflow-hidden flex flex-col justify-center items-center px-6 md:px-12">
       <div className="relative h-screen w-full">
         {/* Title section centered on screen */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center space-y-14 text-center">
           {/* Title */}
-          {/* <MotionH1
-            className="flex flex-col md:flex-row items-center justify-center space-x-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <span className="text-5xl md:text-6xl font-extrabold uppercase text-yellowGreen tracking-widest">
-              FRONTEND
-            </span>
-            <span className="text-5xl md:text-6xl font-extrabold uppercase text-gray-300 tracking-widest">
-              DEVELOPER
-            </span>
-          </MotionH1> */}
           <div className="relative flex items-center justify-center h-32 mb-10">
             {/* Background large text */}
             <h1 className="absolute text-[8rem] font-extrabold text-yellowGreen/20 select-none pointer-events-none tracking-widest">
@@ -135,13 +102,8 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Intro */}
-          {/* <MotionP */}
-          <div
-            className="max-w-xl text-gray-300 text-lg md:text-xl"
-            // initial={{ opacity: 0, y: 20 }}
-            // animate={{ opacity: 1, y: 0 }}
-            // transition={{ duration: 1, delay: 0.3 }}
-          >
+
+          <div className="max-w-xl text-gray-300 text-lg md:text-xl">
             Hi! I’m
             <span className="text-yellowGreen text-3xl animate-bounce">
               {" "}
@@ -149,7 +111,6 @@ const HeroSection: React.FC = () => {
             </span>
             . A creative Frontend Developer with 3.5+ years of experience in
             building high-performance, scalable, and responsive web solutions.
-            {/* </MotionP> */}
           </div>
           {/* Social and Download Icons */}
           <div className="flex flex-row items-center space-x-6 mt-4">
@@ -182,18 +143,10 @@ const HeroSection: React.FC = () => {
               <FaDownload />
             </a>
           </div>
-
           {/* Chevron Down Icon */}
-          {/* <MotionDivBounce */}
-          <div
-            className="text-yellowGreen text-5xl animate-bounce"
-            //   initial={{ opacity: 0, y: 10 }}
-            //   animate={{ opacity: 1, y: 0 }}
-            //   transition={{ repeat: Infinity, repeatType: 'reverse', duration: 1 }}
-            // >
-          >
+
+          <div className="text-yellowGreen text-5xl animate-bounce">
             <FaChevronDown />
-            {/* </MotionDivBounce> */}
           </div>
         </div>
 
@@ -217,8 +170,6 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* </MotionSection> */}
     </div>
   );
 };
