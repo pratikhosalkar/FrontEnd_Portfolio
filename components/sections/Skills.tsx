@@ -1,22 +1,68 @@
-import React from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
-
+import React from "react";
+import { motion, HTMLMotionProps, MotionProps } from "framer-motion";
+interface MotionDivProps extends MotionProps {
+  children: React.ReactNode;
+  className?: string;
+}
 const skills = [
-  "React.js", "React Native", "JavaScript (ES6+)", "TypeScript", "HTML5", "CSS", "Redux", "RESTful APIs", "Next.js",
-  "Tailwind CSS", "SQL", "Webpack", "Babel", "Git (GitHub/GitLab)", "CI/CD", "NPM", "React Native Debugger", "Unit Testing",
-  "Xcode", "Agile (Scrum)", "JIRA", "Confluence", "Figma", "Postman", "SASS", "Code Splitting", "Lazy Loading",
-  "Mobile Optimization", "State Management", "Responsive Design", "Reusable Components", "Application Development",
-  "Mobile App Development", "Software Engineering Concepts", "Business Applications", "Modern Web Standards"
+  "React.js",
+  "React Native",
+  "JavaScript (ES6+)",
+  "TypeScript",
+  "HTML5",
+  "CSS",
+  "Redux",
+  "RESTful APIs",
+  "Next.js",
+  "Tailwind CSS",
+  "SQL",
+  "Webpack",
+  "Babel",
+  "Git (GitHub/GitLab)",
+  "CI/CD",
+  "NPM",
+  "React Native Debugger",
+  "Unit Testing",
+  "Xcode",
+  "Agile (Scrum)",
+  "JIRA",
+  "Confluence",
+  "Figma",
+  "Postman",
+  "SASS",
+  "Code Splitting",
+  "Lazy Loading",
+  "Mobile Optimization",
+  "State Management",
+  "Responsive Design",
+  "Reusable Components",
+  "Application Development",
+  "Mobile App Development",
+  "Software Engineering Concepts",
+  "Business Applications",
+  "Modern Web Standards",
 ];
 
 const softSkills = [
-  "Problem-Solving", "Collaboration", "Leadership", "Performance Optimization", "Mentor Junior Developers"
+  "Problem-Solving",
+  "Collaboration",
+  "Leadership",
+  "Performance Optimization",
+  "Mentor Junior Developers",
 ];
 
-const MotionH2: React.FC<HTMLMotionProps<'h2'>> = motion.h2;
-const MotionSpan: React.FC<HTMLMotionProps<'span'>> = motion.span;
-const MotionH3: React.FC<HTMLMotionProps<'h3'>> = motion.h3;
-
+const MotionDiv: React.FC<MotionDivProps> = ({ children, ...props }) => {
+  return <motion.div {...props}>{children}</motion.div>;
+};
+const MotionH2: React.FC<
+  HTMLMotionProps<"h2"> & { children: React.ReactNode; className?: string }
+> = motion.h2;
+const MotionH3: React.FC<
+  HTMLMotionProps<"h3"> & { children: React.ReactNode; className?: string }
+> = motion.h3;
+const MotionSpan: React.FC<
+  HTMLMotionProps<"span"> & { children: React.ReactNode; className?: string }
+> = motion.span;
 const Skills: React.FC = () => {
   return (
     <section id="skills" className="mb-12 max-w-4xl mx-auto">
@@ -34,7 +80,7 @@ const Skills: React.FC = () => {
           <MotionSpan
             key={idx}
             className="bg-gray-800 rounded px-3 py-1 text-sm"
-            whileHover={{ scale: 1.1, backgroundColor: '#2563eb' }}
+            whileHover={{ scale: 1.1, backgroundColor: "#2563eb" }}
           >
             {skill}
           </MotionSpan>
